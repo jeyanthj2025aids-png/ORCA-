@@ -1,0 +1,12 @@
+{
+  "name": "orca-marine-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ORCA - Marine EcOsystem Reasoning with Collaborative Agents (ISRO/NRSC SIH26176)",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend run start",
+    "lint": "npm --prefix frontend run lint"
+  }
+}
