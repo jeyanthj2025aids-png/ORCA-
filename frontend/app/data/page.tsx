@@ -5,6 +5,8 @@ import Sidebar from '@/components/Sidebar';
 import Header from '@/components/Header';
 import { Database, Satellite, CloudRain, Waves, Anchor, Shield, Search, ExternalLink } from 'lucide-react';
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+
 export default function DataPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<any[]>([]);
@@ -66,7 +68,7 @@ export default function DataPage() {
     if (!searchQuery.trim()) return;
     try {
       setSearching(true);
-      const res = await fetch(`http://localhost:8000/api/search?query=${encodeURIComponent(searchQuery)}`);
+      const res = await fetch(`${API_BASE_URL}/api/search?query=${encodeURIComponent(searchQuery)}`);
       const data = await res.json();
       setSearchResults(data);
     } catch (err) {
